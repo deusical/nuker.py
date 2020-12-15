@@ -5,18 +5,7 @@ class nuker(discord.Client):
         self.token = token
         self.prefix = prefix
         self.infos = ["delchannels", "delroles", "masschannel", "massrole", "massnick", "masskick", "massban", "assignCmd"]
-        self.commands = {
-            
-        }
-        """
-            "delchannels": "delchannels",
-            "delroles": "delroles",
-            "masschannel": "masschannel",
-            "massrole": "massrole",
-            "massnick": "massnick", 
-            "masskick": "masskick",
-            "massban": "massban"
-        """
+        self.commands = {}
         self.bot = discord.Client(intents=discord.Intents.all())
         @self.bot.event
         async def on_ready():
