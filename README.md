@@ -22,12 +22,13 @@ from nuker import nuker
 ### Nuker Class
 
 ```py
-myNuker = nuker("token here", prefix=prefix, invis=True / False, ownerid=yourownerid)
+myNuker = nuker("token here", prefix=prefix, invis=True / False, ownerid=yourownerid, assignCmd=True / False)
 ```
 
 The token should be a bot token. If you do not supply a prefix, it will default to "!".
 Invis will immediately set the bot's status to invisible when you run it if it is set to true. It also defaults to true.
 Ownerid is the user id of the owner. With this set, the only person who will be able to use commands is the user with the id. If you do not set it, it will default to none.
+AssignCmd simply determines if the assignCmd command will exist.
 
 ### assignCommand
 
@@ -38,7 +39,7 @@ myNuker.assignCommand(typeofcommand, nameofcommand)
 ```
 Command types consist of "delchannels", "delroles", "masschannel", "massrole", "massnick", "masskick", and "massban".
 
-You may also use the default set assignCmd command, which will be documented below. I will make this command configurable later.
+You may also use the default set assignCmd command, which will be documented below.
 
 ### run
 

