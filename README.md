@@ -51,6 +51,8 @@ myNuker.run()
 
 ## Commands
 
+Command types: ***"delchannels", "delroles", "masschannel", "massrole", "massnick", "masskick", and "massban"***
+
 Syntax for the commands.
 
 ### assignCmd
